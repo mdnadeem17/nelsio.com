@@ -1,0 +1,885 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Copy, Check } from "lucide-react";
+import nelsioLogoImg from "@/assets/nelsio-logo.png";
+import mohammedImg from "@/assets/mohammed-nadeem.png";
+import pavanImg from "@/assets/pavan-ug.png";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "NELSIO" },
+      {
+        name: "description",
+        content:
+          "NELSIO is an institution dedicated to building independent companies with conviction, discipline, and long-term purpose.",
+      },
+      { property: "og:title", content: "NELSIO" },
+      {
+        property: "og:description",
+        content: "An institution of enduring purpose.",
+      },
+    ],
+  }),
+  component: Index,
+});
+
+/* ─────────────────────────────────────────────────────────────
+   Utilities
+───────────────────────────────────────────────────────────── */
+
+function useLogoFallback() {
+  const [err, setErr] = useState(false);
+  return [err, () => setErr(true)] as const;
+}
+
+function useFadeIn(threshold = 0.15) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+
+  return { ref, visible };
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Logo variants
+───────────────────────────────────────────────────────────── */
+
+function NavLogo() {
+  const [err, onErr] = useLogoFallback();
+  return err ? (
+    <span className="text-[18px] font-semibold tracking-[-0.04em] text-foreground lowercase">
+      nelsio
+    </span>
+  ) : (
+    <img
+      src={nelsioLogoImg}
+      alt="NELSIO"
+      className="h-[22px] w-auto"
+      onError={onErr}
+    />
+  );
+}
+
+function HeroWordmark() {
+  const [err, onErr] = useLogoFallback();
+  return err ? (
+    <div
+      className="w-full select-none"
+      style={{ lineHeight: 0 }}
+    >
+      <span className="text-[22vw] font-semibold tracking-[-0.05em] leading-none text-foreground lowercase block">
+        nelsio
+      </span>
+    </div>
+  ) : (
+    <img
+      src={nelsioLogoImg}
+      alt="NELSIO"
+      className="w-full select-none block"
+      style={{ maxWidth: "100%", display: "block" }}
+      draggable={false}
+      onError={onErr}
+    />
+  );
+}
+
+function FooterLogo() {
+  const [err, onErr] = useLogoFallback();
+  return err ? (
+    <span className="text-[16px] font-semibold tracking-[-0.04em] text-foreground lowercase">
+      nelsio
+    </span>
+  ) : (
+    <img src={nelsioLogoImg} alt="NELSIO" className="h-5 w-auto" onError={onErr} />
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Navigation
+───────────────────────────────────────────────────────────── */
+
+const NAV_LINKS = [
+  { label: "About", href: "#about" },
+  { label: "Vision", href: "#vision" },
+  { label: "Companies", href: "#companies" },
+  { label: "Philosophy", href: "#philosophy" },
+  { label: "Contact", href: "#contact" },
+];
+
+function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 40);
+    fn();
+    window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-black/[0.06]"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container-nelsio flex items-center justify-between h-16">
+        <a href="#top" aria-label="NELSIO home" className="transition-opacity hover:opacity-70">
+          <NavLogo />
+        </a>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="text-[13px] text-foreground/55 hover:text-foreground transition-colors duration-200 tracking-[0.01em]"
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <a
+          href="#contact"
+          className="text-[13px] font-medium text-foreground hover:text-foreground/60 transition-colors duration-200 tracking-[0.01em]"
+        >
+          Get in touch →
+        </a>
+      </div>
+    </header>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Hero — Full-screen institutional composition
+───────────────────────────────────────────────────────────── */
+
+function Hero() {
+  return (
+    <section
+      id="top"
+      className="relative min-h-screen flex flex-col pt-16 overflow-hidden bg-white"
+    >
+      {/* ── Animated orb layer ── */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+
+        {/* Orb 1 — large warm cream, top-left */}
+        <div
+          className="hero-orb-1 absolute rounded-full"
+          style={{
+            width: "900px",
+            height: "900px",
+            top: "-200px",
+            left: "-180px",
+            background:
+              "radial-gradient(circle, rgba(255,245,230,0.9) 0%, rgba(255,240,210,0.6) 40%, transparent 70%)",
+            filter: "blur(60px)",
+          }}
+        />
+
+        {/* Orb 2 — slate-blue cool tone, top-right */}
+        <div
+          className="hero-orb-2 absolute rounded-full"
+          style={{
+            width: "800px",
+            height: "800px",
+            top: "-100px",
+            right: "-200px",
+            background:
+              "radial-gradient(circle, rgba(220,230,255,0.85) 0%, rgba(200,215,255,0.5) 40%, transparent 70%)",
+            filter: "blur(70px)",
+          }}
+        />
+
+        {/* Orb 3 — soft rose, bottom-center */}
+        <div
+          className="hero-orb-3 absolute rounded-full"
+          style={{
+            width: "700px",
+            height: "700px",
+            bottom: "5%",
+            left: "30%",
+            background:
+              "radial-gradient(circle, rgba(255,225,225,0.6) 0%, rgba(255,210,220,0.35) 40%, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+        />
+
+        {/* Very faint noise texture for depth */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
+            backgroundRepeat: "repeat",
+            backgroundSize: "200px 200px",
+            opacity: 0.4,
+          }}
+        />
+      </div>
+
+      {/* Top strip — year label on left, tagline on right */}
+      <div className="container-nelsio relative z-10 pt-20 md:pt-28 flex items-start justify-between">
+        <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1">
+          Est. 2025
+        </p>
+        <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1 hidden sm:block">
+          An institution of enduring purpose
+        </p>
+      </div>
+
+      {/* Main content — statement left, wordmark fills right edge */}
+      <div className="flex-1 flex items-end">
+        <div className="container-nelsio relative z-10 w-full pb-0">
+          {/* Statement headline */}
+          <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-medium leading-[1.08] tracking-[-0.04em] text-foreground max-w-[16ch] mb-12 md:mb-16">
+            Some things
+            <br />
+            are worth{" "}
+            <span className="text-foreground/38">building
+            <br />slowly.</span>
+          </h1>
+
+          {/* Ruled divider with metadata */}
+          <div className="border-t border-black/[0.08] pt-6 pb-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/50 max-w-[46ch]">
+              NELSIO exists to give ambitious ideas the time, discipline, and
+              conviction they deserve. Until they become institutions of their own.
+            </p>
+            <a
+              href="#about"
+              className="shrink-0 text-[12px] uppercase tracking-[0.18em] text-foreground/40 hover:text-foreground transition-colors duration-200 pb-1"
+            >
+              Learn more ↓
+            </a>
+          </div>
+
+          {/* Wordmark — full width, flush to bottom */}
+          <div className="mt-10 md:mt-14 -mx-[clamp(1.25rem,4vw,3rem)] overflow-hidden">
+            <HeroWordmark />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Fade-in wrapper
+───────────────────────────────────────────────────────────── */
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const { ref, visible } = useFadeIn();
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(18px)",
+        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Section wrapper — consistent editorial spacing
+───────────────────────────────────────────────────────────── */
+
+function Section({
+  id,
+  label,
+  children,
+  className = "",
+}: {
+  id: string;
+  label?: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <section id={id} className={`py-28 md:py-40 border-t border-black/[0.07] ${className}`}>
+      <div className="container-nelsio">
+        {label && (
+          <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-14 md:mb-20 select-none">
+            {label}
+          </p>
+        )}
+        {children}
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   About — Institutional introduction
+───────────────────────────────────────────────────────────── */
+
+function About() {
+  return (
+    <Section id="about" label="About NELSIO">
+      {/* Large anchor statement */}
+      <Reveal>
+        <h2 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.04em] text-foreground max-w-[22ch] mb-16 md:mb-20">
+          An institution
+          <br />
+          <span className="text-foreground/38">in the making.</span>
+        </h2>
+      </Reveal>
+
+      {/* Three ruled paragraphs — editorial block structure */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-black/[0.07]">
+        {[
+          {
+            n: "01",
+            text: "NELSIO was founded on a simple conviction: that the most meaningful work requires patience. Not urgency. Not speed. Patience.",
+          },
+          {
+            n: "02",
+            text: "Discipline and restraint are not constraints. They are the conditions under which lasting things are made. Every company within NELSIO is conceived with intention and given the time it deserves.",
+          },
+          {
+            n: "03",
+            text: "We do not measure progress in quarters. We measure it in decades. That distinction changes every decision we make.",
+            accent: true,
+          },
+        ].map((item, i) => (
+          <Reveal key={item.n} delay={i * 80}>
+            <div className="pt-8 pb-10 pr-0 md:pr-12 border-b border-black/[0.07] md:border-b-0 md:border-r md:last:border-r-0">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-foreground/28 mb-5">
+                {item.n}
+              </p>
+              <p
+                className={`text-[16px] leading-[1.8] ${
+                  item.accent
+                    ? "text-foreground font-medium"
+                    : "text-foreground/55"
+                }`}
+              >
+                {item.text}
+              </p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Founders — editorial profile
+───────────────────────────────────────────────────────────── */
+
+const FOUNDERS = [
+  {
+    name: "Mohammed Nadeem",
+    role: "Co-Founder",
+    quote:
+      "I never wanted to build one company. I wanted to build a place where the right companies could begin, and take their time to become something real.",
+    img: mohammedImg,
+  },
+  {
+    name: "Pavan UG",
+    role: "Co-Founder",
+    quote:
+      "The most enduring things are built quietly, without announcing themselves. That is how we intend to work.",
+    img: pavanImg,
+  },
+];
+
+function Founders() {
+  return (
+    <Section id="founders" label="Leadership">
+      <Reveal>
+        <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-16 md:mb-24 max-w-[24ch]">
+          Built by those who
+          <br />
+          think in decades.
+        </h2>
+      </Reveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 max-w-[880px]">
+        {FOUNDERS.map((f, i) => (
+          <Reveal key={f.name} delay={i * 100}>
+            <div className="flex flex-col gap-7">
+              {/* Portrait */}
+              <div className="relative w-full aspect-[3/4] rounded overflow-hidden max-w-[300px] bg-[oklch(0.96_0_0)]">
+                <img
+                  src={f.img}
+                  alt={f.name}
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                />
+                {/* Subtle overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              </div>
+
+              {/* Profile text */}
+              <div className="space-y-4">
+                <div className="border-t border-black/[0.07] pt-5">
+                  <p className="text-[17px] font-medium text-foreground tracking-[-0.02em]">
+                    {f.name}
+                  </p>
+                  <p className="text-[12px] text-foreground/40 mt-1 uppercase tracking-[0.14em]">
+                    {f.role}
+                  </p>
+                </div>
+                <blockquote className="text-[15px] leading-[1.8] text-foreground/55 italic">
+                  "{f.quote}"
+                </blockquote>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Vision
+───────────────────────────────────────────────────────────── */
+
+function Vision() {
+  return (
+    <Section
+      id="vision"
+      label="Vision"
+      className="bg-[oklch(0.985_0_0)]"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+        <Reveal className="md:col-span-4">
+          <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
+            What we
+            <br />
+            stand for.
+          </h2>
+        </Reveal>
+
+        <div className="md:col-span-7 md:col-start-6 space-y-10">
+          {[
+            {
+              title: "Permanence over momentum.",
+              body: "The world rewards speed. We choose depth. Every decision at NELSIO is made with the long view in mind: what this company will represent not in a year, but in a generation.",
+            },
+            {
+              title: "Responsibility as a foundation.",
+              body: "Progress is only meaningful when it serves the people it reaches. We hold ourselves accountable not just to results, but to the manner in which those results are achieved.",
+            },
+            {
+              title: "Innovation with purpose.",
+              body: "We do not pursue novelty. We pursue necessity: the kind of work that fills a genuine gap, that solves a real problem, that makes something measurably better for the people who depend on it.",
+            },
+          ].map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
+              <div className="border-t border-black/[0.07] pt-8">
+                <h3 className="text-[18px] font-medium text-foreground tracking-[-0.02em] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-[16px] leading-[1.75] text-foreground/55 max-w-[52ch]">
+                  {item.body}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Companies — each one an institution
+───────────────────────────────────────────────────────────── */
+
+const COMPANIES = [
+  {
+    name: "CUTZO",
+    descriptor: "An independent NELSIO company",
+    sector: "Commerce & Services",
+    summary:
+      "A platform redefining how salons manage appointments and serve their clients. Built on the belief that every service deserves precision.",
+    year: "2025",
+  },
+  {
+    name: "IBZEN",
+    descriptor: "An independent NELSIO company",
+    sector: "Education",
+    summary:
+      "An institution of applied learning dedicated to engineering and technology education. Bridging rigorous knowledge with real-world practice.",
+    year: "2025",
+  },
+  {
+    name: "Innovex Hub",
+    descriptor: "An independent NELSIO company",
+    sector: "Technology & Infrastructure",
+    summary:
+      "A software and systems organisation advancing technical infrastructure with precision, accountability, and long-term reliability.",
+    year: "2025",
+  },
+  {
+    name: "Apna Look",
+    descriptor: "An independent NELSIO company",
+    sector: "AI & Consumer",
+    summary:
+      "A personal styling platform that brings thoughtful intelligence to the way people discover, wear, and understand their own aesthetic.",
+    year: "2025",
+  },
+];
+
+function Companies() {
+  return (
+    <Section id="companies" label="The NELSIO Companies">
+      <Reveal>
+        <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-4 max-w-[22ch]">
+          Independent companies.
+          <br />
+          <span className="text-foreground/40">One shared conviction.</span>
+        </h2>
+        <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
+          Each company within NELSIO operates independently, with its own identity,
+          leadership, and mission. What they share is the standard they are held to.
+        </p>
+      </Reveal>
+
+      <div className="space-y-0 border-t border-black/[0.07]">
+        {COMPANIES.map((c, i) => (
+          <Reveal key={c.name} delay={i * 40}>
+            <a
+              href="#contact"
+              className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 md:py-14 border-b border-black/[0.07] transition-colors duration-300 hover:bg-[oklch(0.985_0_0)] -mx-6 px-6 rounded"
+            >
+              {/* Company name — large editorial */}
+              <div className="md:w-64 shrink-0">
+                <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium tracking-[-0.04em] text-foreground leading-none group-hover:text-foreground/70 transition-colors duration-300">
+                  {c.name}
+                </h3>
+                <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/35 mt-2">
+                  {c.year}
+                </p>
+              </div>
+
+              {/* Details */}
+              <div className="flex-1 min-w-0">
+                <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/35 mb-3">
+                  {c.sector}
+                </p>
+                <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/55 max-w-[52ch]">
+                  {c.summary}
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <div className="shrink-0 self-center md:self-start mt-0 md:mt-3">
+                <span className="inline-flex items-center gap-1.5 text-[13px] text-foreground/35 group-hover:text-foreground transition-colors duration-300">
+                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </a>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Philosophy — editorial principle blocks
+───────────────────────────────────────────────────────────── */
+
+const PRINCIPLES = [
+  {
+    n: "I",
+    title: "Think beyond generations.",
+    body: "Short-term returns are not our objective. We invest time in things that compound: knowledge, reputation, and quality of work.",
+  },
+  {
+    n: "II",
+    title: "Pursue excellence without compromise.",
+    body: "There are no acceptable shortcuts in work we put our name to. The standard does not move. It only rises.",
+  },
+  {
+    n: "III",
+    title: "Move with intention.",
+    body: "Deliberate action outperforms reactive speed. We think carefully before we commit, and we commit fully once we do.",
+  },
+  {
+    n: "IV",
+    title: "Respect the craft.",
+    body: "Whether it is a product, a service, or a sentence: it deserves care. Craftsmanship is not optional. It is the baseline.",
+  },
+  {
+    n: "V",
+    title: "Create lasting value.",
+    body: "We measure success not by what we launch, but by what remains, and whether it continues to serve those who depend on it.",
+  },
+];
+
+function Philosophy() {
+  return (
+    <Section id="philosophy" label="Philosophy" className="bg-foreground text-background">
+      <Reveal>
+        <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-background mb-16 md:mb-24 max-w-[22ch]">
+          The principles that
+          <br />
+          guide everything.
+        </h2>
+      </Reveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-white/10">
+        {PRINCIPLES.map((p, i) => (
+          <Reveal key={p.n} delay={i * 60}>
+            <div className="py-10 pr-8 border-b border-white/10 md:border-r md:border-white/10">
+              <p className="text-[12px] font-medium text-background/30 uppercase tracking-[0.2em] mb-5">
+                {p.n}
+              </p>
+              <h3 className="text-[17px] font-medium text-background tracking-[-0.02em] mb-3 leading-[1.35]">
+                {p.title}
+              </h3>
+              <p className="text-[14px] leading-[1.75] text-background/50">
+                {p.body}
+              </p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Looking Forward
+───────────────────────────────────────────────────────────── */
+
+function LookingForward() {
+  return (
+    <Section id="forward" label="Looking Forward">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+        <Reveal className="md:col-span-5">
+          <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
+            Quietly building
+            <br />
+            what endures.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100} className="md:col-span-6 md:col-start-7">
+          <div className="space-y-6 text-[17px] leading-[1.8] text-foreground/55">
+            <p>
+              We are in the early chapters of a much longer story. NELSIO has
+              not set out to grow quickly, nor to accumulate. We have set out to
+              do good work, the kind that accumulates quietly into something
+              worthy of the time it took.
+            </p>
+            <p>
+              What comes next will not be announced in advance. It will arrive
+              when it is ready. And when it does, it will carry the same
+              standard every NELSIO company is built to.
+            </p>
+            <p className="text-foreground/80 font-medium text-[16px]">
+              There is no urgency here. Only intention.
+            </p>
+          </div>
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Closing statement
+───────────────────────────────────────────────────────────── */
+
+function Closing() {
+  return (
+    <section className="py-28 md:py-44 border-t border-black/[0.07] bg-[oklch(0.985_0_0)]">
+      <div className="container-nelsio">
+        <Reveal>
+          <p className="text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-[1.15] tracking-[-0.04em] text-foreground max-w-[22ch]">
+            "Enduring ideas are not announced.
+            <br />
+            <span className="text-foreground/40">They are recognised, in time."</span>
+          </p>
+        </Reveal>
+        <Reveal delay={120}>
+          <p className="mt-8 text-[13px] uppercase tracking-[0.18em] text-foreground/35">
+            NELSIO
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Contact
+───────────────────────────────────────────────────────────── */
+
+function CopyEmail({ email }: { email: string }) {
+  const [copied, setCopied] = useState(false);
+  const copy = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <div className="group flex items-center justify-between py-5 border-b border-black/[0.07] cursor-pointer" onClick={copy}>
+      <a
+        href={`mailto:${email}`}
+        onClick={(e) => e.stopPropagation()}
+        className="text-[17px] md:text-[19px] font-normal text-foreground hover:text-foreground/60 transition-colors tracking-[-0.01em]"
+      >
+        {email}
+      </a>
+      <button
+        onClick={copy}
+        className="flex items-center gap-2 text-[12px] text-foreground/35 hover:text-foreground transition-colors"
+      >
+        {copied ? (
+          <>
+            <Check className="h-3.5 w-3.5 text-green-600" />
+            <span>Copied</span>
+          </>
+        ) : (
+          <>
+            <Copy className="h-3.5 w-3.5" />
+            <span>Copy</span>
+          </>
+        )}
+      </button>
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <Section id="contact" label="Contact">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+        <Reveal className="md:col-span-5">
+          <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
+            We are
+            <br />
+            listening.
+          </h2>
+          <p className="mt-5 text-[15px] leading-[1.75] text-foreground/50 max-w-[38ch]">
+            If what we stand for resonates with you, we would be glad to hear from you.
+          </p>
+        </Reveal>
+
+        <Reveal delay={80} className="md:col-span-5 md:col-start-7">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2">
+            General
+          </p>
+          <CopyEmail email="hello@nelsio.com" />
+
+          <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2 mt-8">
+            Companies
+          </p>
+          <CopyEmail email="ventures@nelsio.com" />
+        </Reveal>
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Footer
+───────────────────────────────────────────────────────────── */
+
+function Footer() {
+  return (
+    <footer className="border-t border-black/[0.07] py-12">
+      <div className="container-nelsio">
+        {/* Top row */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8 mb-10">
+          <FooterLogo />
+
+          <nav className="flex flex-wrap gap-6">
+            {NAV_LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[13px] text-foreground/40 hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-[13px] text-foreground/40 hover:text-foreground transition-colors"
+          >
+            LinkedIn
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
+
+        {/* Bottom row */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-black/[0.06] pt-8">
+          <p className="text-[12px] text-foreground/30">
+            © {new Date().getFullYear()} NELSIO. All rights reserved.
+          </p>
+          <p className="text-[12px] text-foreground/30 italic">
+            Built with the patience that enduring things require.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Root
+───────────────────────────────────────────────────────────── */
+
+function Index() {
+  return (
+    <div className="min-h-screen bg-white text-foreground selection:bg-foreground selection:text-white antialiased">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Founders />
+        <Vision />
+        <Companies />
+        <Philosophy />
+        <LookingForward />
+        <Closing />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
