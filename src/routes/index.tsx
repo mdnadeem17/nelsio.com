@@ -176,7 +176,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex flex-col pt-16 overflow-hidden bg-white"
+      className="relative min-h-screen flex flex-col pt-16 overflow-hidden bg-transparent"
     >
       {/* ── Animated orb layer ── */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -473,7 +473,7 @@ function Vision() {
     <Section
       id="vision"
       label="Vision"
-      className="bg-[oklch(0.985_0_0)]"
+      className="bg-[oklch(0.985_0_0)]/80 backdrop-blur-[2px]"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
         <Reveal className="md:col-span-4">
@@ -575,7 +575,7 @@ function Companies() {
           <Reveal key={c.name} delay={i * 40}>
             <a
               href="#contact"
-              className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 md:py-14 border-b border-black/[0.07] transition-colors duration-300 hover:bg-[oklch(0.985_0_0)] -mx-6 px-6 rounded"
+              className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 md:py-14 border-b border-black/[0.07] transition-colors duration-300 hover:bg-[oklch(0.985_0_0)]/80 backdrop-blur-[1px] -mx-6 px-6 rounded"
             >
               {/* Company name — large editorial */}
               <div className="md:w-64 shrink-0">
@@ -836,7 +836,7 @@ function Footer() {
           </nav>
 
           <a
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/nelsio/"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-[13px] text-foreground/40 hover:text-foreground transition-colors"
@@ -866,20 +866,27 @@ function Footer() {
 
 function Index() {
   return (
-    <div className="min-h-screen bg-white text-foreground selection:bg-foreground selection:text-white antialiased">
-      <Nav />
-      <main>
-        <Hero />
-        <About />
-        <Founders />
-        <Vision />
-        <Companies />
-        <Philosophy />
-        <LookingForward />
-        <Closing />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-white text-foreground selection:bg-foreground selection:text-white antialiased relative overflow-x-hidden">
+      {/* ── Global Architectural Texture ("Like grid in the background not the grid") ── */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 bg-dot-grid opacity-75"
+      />
+      <div className="relative z-10">
+        <Nav />
+        <main>
+          <Hero />
+          <About />
+          <Founders />
+          <Vision />
+          <Companies />
+          <Philosophy />
+          <LookingForward />
+          <Closing />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
