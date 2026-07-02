@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Copy, Check } from "lucide-react";
-import nelsioLogoImg from "@/assets/nelsio-logo.png";
-import mohammedImg from "@/assets/mohammed-nadeem.png";
-import pavanImg from "@/assets/pavan-ug.png";
+const nelsioLogoImg = "/nelsio-logo.png";
+const mohammedImg = "/mohammed-nadeem.png";
+const pavanImg = "/pavan-ug.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
