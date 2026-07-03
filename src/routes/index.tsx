@@ -420,9 +420,9 @@ function Founders() {
     <Section id="founders" label="Leadership">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-16 md:mb-24 max-w-[24ch]">
-          Built to think
+          Thinking in decades.
           <br />
-          in decades.
+          <span className="text-foreground/40">Guided by conviction.</span>
         </h2>
       </Reveal>
 
