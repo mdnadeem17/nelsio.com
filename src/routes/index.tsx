@@ -50,9 +50,13 @@ function useFadeIn(threshold = 0.15) {
   return { ref, visible };
 }
 
+/* ─────────────────────────────────────────────────────────────
+   Logo variants
+───────────────────────────────────────────────────────────── */
+
 function NavLogo() {
   return (
-    <span className="text-[19px] font-semibold tracking-[-0.045em] text-foreground lowercase select-none">
+    <span className="text-[20px] font-semibold tracking-[-0.04em] text-foreground lowercase select-none">
       nelsio
     </span>
   );
@@ -60,8 +64,11 @@ function NavLogo() {
 
 function HeroWordmark() {
   return (
-    <div className="w-full select-none" style={{ lineHeight: 0.82 }}>
-      <span className="text-[21.5vw] font-semibold tracking-[-0.055em] text-foreground lowercase block">
+    <div
+      className="w-full select-none overflow-hidden pb-1"
+      style={{ lineHeight: 0.82 }}
+    >
+      <span className="text-[21.5vw] font-semibold tracking-[-0.05em] text-foreground lowercase block select-none">
         nelsio
       </span>
     </div>
@@ -70,7 +77,7 @@ function HeroWordmark() {
 
 function FooterLogo() {
   return (
-    <span className="text-[17px] font-semibold tracking-[-0.045em] text-foreground lowercase select-none">
+    <span className="text-[17px] font-semibold tracking-[-0.04em] text-foreground lowercase select-none">
       nelsio
     </span>
   );
