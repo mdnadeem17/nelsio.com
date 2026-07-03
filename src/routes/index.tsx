@@ -258,7 +258,7 @@ function Hero() {
           {/* Ruled divider with metadata */}
           <div className="border-t border-black/[0.08] pt-6 pb-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/50 max-w-[46ch]">
-              NELSIO is the parent company behind our software products, platforms, and educational initiatives. We build technology and programs designed to last.
+              NELSIO is the parent company behind our independent startups, platforms, and educational initiatives. We build technology and companies designed to last.
             </p>
             <a
               href="#about"
@@ -478,7 +478,7 @@ function MissionVision() {
               To build, scale, and endure.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              NELSIO exists as the parent company created to design, build, and support our software applications and youth initiatives — giving each product the dedicated engineering and time it needs to scale.
+              NELSIO exists as the parent company created to design, build, and support our software applications and youth initiatives — giving each startup the dedicated engineering and time it needs to scale.
             </p>
           </div>
         </Reveal>
@@ -509,7 +509,7 @@ function MissionVision() {
 const COMPANIES = [
   {
     name: "CUTZO",
-    relationship: "Flagship Product",
+    relationship: "Flagship Startup",
     sector: "Commerce & Services",
     tagline: "Smart appointments and queue management for salons.",
     summary:
@@ -525,7 +525,7 @@ const COMPANIES = [
   },
   {
     name: "Apna Look",
-    relationship: "Product Concept",
+    relationship: "Startup Concept",
     sector: "AI & Fashion-Tech",
     tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
@@ -613,7 +613,7 @@ const PRINCIPLES = [
   {
     n: "IV",
     title: "Respect the craft.",
-    body: "Whether it is a product, a service, or a sentence: it deserves care. Craftsmanship is not optional. It is the baseline.",
+    body: "Whether it is a startup, a software platform, or a sentence: it deserves care. Craftsmanship is not optional. It is the baseline.",
   },
   {
     n: "V",
