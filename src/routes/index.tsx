@@ -420,9 +420,9 @@ function Founders() {
     <Section id="founders" label="Leadership">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-16 md:mb-24 max-w-[24ch]">
-          Thinking in decades.
+          Guided by conviction.
           <br />
-          <span className="text-foreground/40">Guided by conviction.</span>
+          <span className="text-foreground/40">Building for decades.</span>
         </h2>
       </Reveal>
 
@@ -760,9 +760,9 @@ function Closing() {
       <div className="container-nelsio">
         <Reveal>
           <p className="text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-[1.15] tracking-[-0.04em] text-foreground max-w-[22ch]">
-            "Enduring ideas are not announced.
+            "Enduring value is not announced.
             <br />
-            <span className="text-foreground/40">They are recognised, in time."</span>
+            <span className="text-foreground/40">It is proven over time."</span>
           </p>
         </Reveal>
         <Reveal delay={120}>
