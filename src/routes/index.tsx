@@ -529,15 +529,6 @@ const COMPANIES = [
     year: "2025",
   },
   {
-    name: "Innovex Hub",
-    relationship: "Innovation Platform",
-    sector: "Student Innovation & Startups",
-    tagline: "A platform where student ideas become real innovations.",
-    summary:
-      "Students, developers, and designers collaborate across AI, robotics, and automation. Build to Innovate.",
-    year: "2025",
-  },
-  {
     name: "Apna Look",
     relationship: "Product Concept",
     sector: "AI & Fashion-Tech",
