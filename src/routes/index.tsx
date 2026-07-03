@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "NELSIO" },
       {
         property: "og:description",
-        content: "A venture of enduring purpose.",
+        content: "A parent company of enduring purpose.",
       },
     ],
   }),
@@ -242,7 +242,7 @@ function Hero() {
           Est. 2025
         </p>
         <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1 hidden sm:block">
-          A venture of enduring purpose
+          A parent company of enduring purpose
         </p>
       </div>
 
@@ -349,7 +349,7 @@ function About() {
       {/* Large anchor statement */}
       <Reveal>
         <h2 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.04em] text-foreground max-w-[22ch] mb-16 md:mb-20">
-          A venture
+          A parent company
           <br />
           <span className="text-foreground/38">in the making.</span>
         </h2>
@@ -740,7 +740,7 @@ function LookingForward() {
             <p>
               What comes next will not be announced in advance. It will arrive
               when it is ready. And when it does, it will carry the same
-              standard every venture under NELSIO is held to.
+              standard every product and initiative under NELSIO is held to.
             </p>
             <p className="text-foreground/80 font-medium text-[16px]">
               There is no urgency here. Only intention.
@@ -840,7 +840,7 @@ function Contact() {
               Bengaluru, India
             </p>
             <p className="text-[13px] text-foreground/45 mt-0.5">
-              Operating globally across student initiatives and independent ventures.
+              Operating globally across software products and youth initiatives.
             </p>
           </div>
         </Reveal>
@@ -854,7 +854,7 @@ function Contact() {
 
           {/* TODO: Verify live MX records and active mailboxes for ventures@nelsio.com before public release */}
           <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2 mt-8">
-            Ventures
+            Products & Initiatives
           </p>
           <CopyEmail email="ventures@nelsio.com" />
         </Reveal>
