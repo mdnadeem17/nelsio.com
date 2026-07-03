@@ -251,11 +251,9 @@ function Hero() {
         <div className="container-nelsio relative z-10 w-full pb-0">
           {/* Statement headline */}
           <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-medium leading-[1.08] tracking-[-0.04em] text-foreground max-w-[16ch] mb-12 md:mb-16">
-            Some things
+            Built for
             <br />
-            are worth{" "}
-            <span className="text-foreground/38">building
-            <br />slowly.</span>
+            <span className="text-foreground/38">permanence.</span>
           </h1>
 
           {/* Ruled divider with metadata */}
@@ -349,9 +347,9 @@ function About() {
       {/* Large anchor statement */}
       <Reveal>
         <h2 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.04em] text-foreground max-w-[22ch] mb-16 md:mb-20">
-          A parent company
+          One home.
           <br />
-          <span className="text-foreground/38">in the making.</span>
+          <span className="text-foreground/38">Many products.</span>
         </h2>
       </Reveal>
 
@@ -420,9 +418,7 @@ function Founders() {
     <Section id="founders" label="Leadership">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-16 md:mb-24 max-w-[24ch]">
-          Built to think
-          <br />
-          in decades.
+          The builders.
         </h2>
       </Reveal>
 
@@ -478,7 +474,7 @@ function MissionVision() {
               Mission
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              To build, scale, and endure.
+              Build. Scale. Endure.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
               NELSIO exists as the parent company created to design, build, and support our software applications and youth initiatives — giving each product the dedicated engineering and time it needs to scale.
@@ -493,7 +489,7 @@ function MissionVision() {
               Vision
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              Platforms built to compound value.
+              Built for decades.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
               A generation from now, the engineering quality and utility of our products will be our enduring legacy. We build toward permanence rather than short-term trends.
@@ -553,9 +549,9 @@ function Companies() {
     <Section id="products" label="Products & Initiatives">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-4 max-w-[22ch]">
-          Our software products
+          Our products.
           <br />
-          <span className="text-foreground/40">& educational platforms.</span>
+          <span className="text-foreground/40">& initiatives.</span>
         </h2>
         <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
           All our applications and initiatives are built, maintained, and published under the NELSIO corporate umbrella — ensuring unified engineering quality and long-term support.
@@ -645,9 +641,7 @@ function Philosophy() {
     <Section id="philosophy" label="Philosophy" className="bg-foreground text-background">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-background mb-16 md:mb-24 max-w-[22ch]">
-          The principles that
-          <br />
-          guide everything.
+          How we think.
         </h2>
       </Reveal>
 
@@ -723,9 +717,7 @@ function LookingForward() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
         <Reveal className="md:col-span-5">
           <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
-            Quietly building
-            <br />
-            what endures.
+            What comes next.
           </h2>
         </Reveal>
 
@@ -762,9 +754,9 @@ function Closing() {
       <div className="container-nelsio">
         <Reveal>
           <p className="text-[clamp(2rem,4.5vw,3.6rem)] font-medium leading-[1.15] tracking-[-0.04em] text-foreground max-w-[22ch]">
-            "Enduring ideas are not announced.
+            "Great software compounds.
             <br />
-            <span className="text-foreground/40">They are recognised, in time."</span>
+            <span className="text-foreground/40">Quietly, over time."</span>
           </p>
         </Reveal>
         <Reveal delay={120}>
@@ -824,9 +816,7 @@ function Contact() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
         <Reveal className="md:col-span-5">
           <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
-            We are
-            <br />
-            listening.
+            Get in touch.
           </h2>
           <p className="mt-5 text-[15px] leading-[1.75] text-foreground/50 max-w-[38ch]">
             If what we stand for resonates with you, we would be glad to hear from you.
