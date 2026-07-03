@@ -236,11 +236,8 @@ function Hero() {
         />
       </div>
 
-      {/* Top strip — year label on left, tagline on right */}
-      <div className="container-nelsio relative z-10 pt-20 md:pt-28 flex items-start justify-between">
-        <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1">
-          Est. 2025
-        </p>
+      {/* Top strip — tagline on right */}
+      <div className="container-nelsio relative z-10 pt-20 md:pt-28 flex items-start justify-end">
         <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1 hidden sm:block">
           Built for enduring purpose
         </p>
@@ -517,7 +514,6 @@ const COMPANIES = [
     tagline: "Smart appointments and queue management for salons.",
     summary:
       "Book nearby salons, join virtual queues, and eliminate waiting — while salon owners manage walk-ins and bookings from one dashboard.",
-    year: "2025",
   },
   {
     name: "IBZEN",
@@ -526,7 +522,6 @@ const COMPANIES = [
     tagline: "Two-day workshops that change how school students see the future.",
     summary:
       "Immersive sessions in technology, engineering, and financial literacy — connecting students with mentors and real-world career exposure.",
-    year: "2025",
   },
   {
     name: "Apna Look",
@@ -535,7 +530,6 @@ const COMPANIES = [
     tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
       "A concept exploring personalised style based on body type, skin tone, budget, and preference — combining innovations from multiple brands into complete looks.",
-    year: "Concept Stage",
   },
 ];
 
@@ -562,9 +556,6 @@ function Companies() {
                 <h3 className="text-[clamp(1.5rem,3vw,2.2rem)] font-medium tracking-[-0.04em] text-foreground leading-none">
                   {c.name}
                 </h3>
-                <p className="text-[10px] uppercase tracking-[0.15em] text-foreground/30 mt-2">
-                  {c.year}
-                </p>
               </div>
 
               {/* Details */}
