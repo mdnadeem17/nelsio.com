@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Copy, Check } from "lucide-react";
-const nelsioLogoImg = "/nelsio-logo.png";
-const mohammedImg = "/mohammed-nadeem.png";
-const pavanImg = "/pavan-ug.png";
+import { ArrowUpRight, Copy, Check, ArrowRight } from "lucide-react";
+import nelsioLogoImg from "@/assets/nelsio-logo.png";
+import mohammedImg from "@/assets/mohammed-nadeem.png";
+import pavanImg from "@/assets/pavan-ug.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -12,12 +12,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "NELSIO is an institution dedicated to building independent companies with conviction, discipline, and long-term purpose.",
+          "NELSIO is the venture behind independent ventures — operating, backing, and incubating ideas with conviction and long-term purpose.",
       },
       { property: "og:title", content: "NELSIO" },
       {
         property: "og:description",
-        content: "An institution of enduring purpose.",
+        content: "A venture of enduring purpose.",
       },
     ],
   }),
@@ -117,7 +117,7 @@ function FooterLogo() {
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Vision", href: "#vision" },
-  { label: "Companies", href: "#companies" },
+  { label: "Ventures", href: "#ventures" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -181,7 +181,7 @@ function Hero() {
       {/* ── Animated orb layer ── */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        {/* Orb 1 — large warm cream, top-left */}
+        {/* Orb 1 — soft neutral grey, top-left */}
         <div
           className="hero-orb-1 absolute rounded-full"
           style={{
@@ -190,12 +190,12 @@ function Hero() {
             top: "-200px",
             left: "-180px",
             background:
-              "radial-gradient(circle, rgba(255,245,230,0.9) 0%, rgba(255,240,210,0.6) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(235,235,240,0.8) 0%, rgba(220,220,225,0.4) 40%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
 
-        {/* Orb 2 — slate-blue cool tone, top-right */}
+        {/* Orb 2 — muted slate grey cool tone, top-right */}
         <div
           className="hero-orb-2 absolute rounded-full"
           style={{
@@ -204,12 +204,12 @@ function Hero() {
             top: "-100px",
             right: "-200px",
             background:
-              "radial-gradient(circle, rgba(220,230,255,0.85) 0%, rgba(200,215,255,0.5) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(225,230,238,0.7) 0%, rgba(205,212,222,0.35) 40%, transparent 70%)",
             filter: "blur(70px)",
           }}
         />
 
-        {/* Orb 3 — soft rose, bottom-center */}
+        {/* Orb 3 — soft off-white mist, bottom-center */}
         <div
           className="hero-orb-3 absolute rounded-full"
           style={{
@@ -218,7 +218,7 @@ function Hero() {
             bottom: "5%",
             left: "30%",
             background:
-              "radial-gradient(circle, rgba(255,225,225,0.6) 0%, rgba(255,210,220,0.35) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(245,245,247,0.6) 0%, rgba(230,230,235,0.25) 40%, transparent 70%)",
             filter: "blur(80px)",
           }}
         />
@@ -242,7 +242,7 @@ function Hero() {
           Est. 2025
         </p>
         <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1 hidden sm:block">
-          An institution of enduring purpose
+          A venture of enduring purpose
         </p>
       </div>
 
@@ -261,8 +261,7 @@ function Hero() {
           {/* Ruled divider with metadata */}
           <div className="border-t border-black/[0.08] pt-6 pb-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/50 max-w-[46ch]">
-              NELSIO exists to give ambitious ideas the time, discipline, and
-              conviction they deserve. Until they become institutions of their own.
+              To build, back, and stand behind — this is the work NELSIO does, across every venture that carries its name.
             </p>
             <a
               href="#about"
@@ -350,7 +349,7 @@ function About() {
       {/* Large anchor statement */}
       <Reveal>
         <h2 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.04em] text-foreground max-w-[22ch] mb-16 md:mb-20">
-          An institution
+          A venture
           <br />
           <span className="text-foreground/38">in the making.</span>
         </h2>
@@ -361,15 +360,15 @@ function About() {
         {[
           {
             n: "01",
-            text: "NELSIO was founded on a simple conviction: that the most meaningful work requires patience. Not urgency. Not speed. Patience.",
+            text: "NELSIO is a venture — not a company in the conventional sense, but a venture that gives independent companies the backing, discipline, and time they need to grow into their own identity.",
           },
           {
             n: "02",
-            text: "Discipline and restraint are not constraints. They are the conditions under which lasting things are made. Every company within NELSIO is conceived with intention and given the time it deserves.",
+            text: "The companies under NELSIO are not uniform. Some are built from within. Others are student-led initiatives we back and stand behind. Some are early ideas still finding their shape. What unites them is the standard NELSIO holds them to.",
           },
           {
             n: "03",
-            text: "We do not measure progress in quarters. We measure it in decades. That distinction changes every decision we make.",
+            text: "We are not built to optimize for quarters. We are built to be measured in decades. That distinction shapes every decision we make.",
             accent: true,
           },
         ].map((item, i) => (
@@ -399,19 +398,19 @@ function About() {
    Founders — editorial profile
 ───────────────────────────────────────────────────────────── */
 
+// TODO: Replace with founder-approved direct quotes before launch.
+// TODO: Verify exact official leadership titles (e.g., Co-Founder, Partner, Director) with Mohammed Nadeem and Pavan UG prior to public release.
 const FOUNDERS = [
   {
     name: "Mohammed Nadeem",
     role: "Co-Founder",
-    quote:
-      "I never wanted to build one company. I wanted to build a place where the right companies could begin, and take their time to become something real.",
+    bio: "Focused on governance, venture structure, and long-term strategic direction.",
     img: mohammedImg,
   },
   {
     name: "Pavan UG",
     role: "Co-Founder",
-    quote:
-      "The most enduring things are built quietly, without announcing themselves. That is how we intend to work.",
+    bio: "Focused on technical infrastructure, engineering excellence, and venture operations.",
     img: pavanImg,
   },
 ];
@@ -421,9 +420,9 @@ function Founders() {
     <Section id="founders" label="Leadership">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-16 md:mb-24 max-w-[24ch]">
-          Built by those who
+          Built to think
           <br />
-          think in decades.
+          in decades.
         </h2>
       </Reveal>
 
@@ -452,9 +451,9 @@ function Founders() {
                     {f.role}
                   </p>
                 </div>
-                <blockquote className="text-[15px] leading-[1.8] text-foreground/55 italic">
-                  "{f.quote}"
-                </blockquote>
+                <p className="text-[15px] leading-[1.8] text-foreground/55">
+                  {f.bio}
+                </p>
               </div>
             </div>
           </Reveal>
@@ -465,145 +464,143 @@ function Founders() {
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Vision
+   Mission & Vision — two distinct short blocks
 ───────────────────────────────────────────────────────────── */
 
-function Vision() {
+function MissionVision() {
   return (
-    <Section
-      id="vision"
-      label="Vision"
-      className="bg-[oklch(0.985_0_0)]/80 backdrop-blur-[2px]"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-        <Reveal className="md:col-span-4">
-          <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
-            What we
-            <br />
-            stand for.
-          </h2>
+    <Section id="vision" label="Mission & Vision">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-black/[0.07]">
+        {/* Mission */}
+        <Reveal>
+          <div className="pt-10 pb-14 pr-0 md:pr-16 md:border-r border-black/[0.07]">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/30 mb-5">
+              Mission
+            </p>
+            <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
+              To build, back, and stand behind.
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
+              NELSIO exists to give independent ventures the structure, standard, and time they need to become something real. We operate some directly, back others from behind the scenes, and incubate ideas still finding their shape.
+            </p>
+          </div>
         </Reveal>
 
-        <div className="md:col-span-7 md:col-start-6 space-y-10">
-          {[
-            {
-              title: "Permanence over momentum.",
-              body: "The world rewards speed. We choose depth. Every decision at NELSIO is made with the long view in mind: what this company will represent not in a year, but in a generation.",
-            },
-            {
-              title: "Responsibility as a foundation.",
-              body: "Progress is only meaningful when it serves the people it reaches. We hold ourselves accountable not just to results, but to the manner in which those results are achieved.",
-            },
-            {
-              title: "Innovation with purpose.",
-              body: "We do not pursue novelty. We pursue necessity: the kind of work that fills a genuine gap, that solves a real problem, that makes something measurably better for the people who depend on it.",
-            },
-          ].map((item, i) => (
-            <Reveal key={item.title} delay={i * 80}>
-              <div className="border-t border-black/[0.07] pt-8">
-                <h3 className="text-[18px] font-medium text-foreground tracking-[-0.02em] mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-[16px] leading-[1.75] text-foreground/55 max-w-[52ch]">
-                  {item.body}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        {/* Vision */}
+        <Reveal delay={80}>
+          <div className="pt-10 pb-14 pl-0 md:pl-16">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/30 mb-5">
+              Vision
+            </p>
+            <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
+              A venture built to outlast its founders.
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
+              A generation from now, the standard NELSIO holds its ventures to will be its most enduring legacy. We are not optimising for the next milestone. We are building toward permanence.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </Section>
   );
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Companies — each one an institution
+   Portfolio & Ventures
 ───────────────────────────────────────────────────────────── */
 
 const COMPANIES = [
   {
     name: "CUTZO",
-    descriptor: "An independent NELSIO company",
+    relationship: "Operated by NELSIO",
     sector: "Commerce & Services",
+    tagline: "Smart appointments and queue management for salons.",
     summary:
-      "A platform redefining how salons manage appointments and serve their clients. Built on the belief that every service deserves precision.",
+      "Book nearby salons, join virtual queues, and eliminate waiting — while salon owners manage walk-ins and bookings from one dashboard.",
     year: "2025",
   },
   {
     name: "IBZEN",
-    descriptor: "An independent NELSIO company",
-    sector: "Education",
+    relationship: "Backed by NELSIO",
+    sector: "Youth Innovation & Career Education",
+    tagline: "Two-day workshops that change how school students see the future.",
     summary:
-      "An institution of applied learning dedicated to engineering and technology education. Bridging rigorous knowledge with real-world practice.",
+      "Immersive sessions in technology, engineering, and financial literacy — connecting students with mentors and real-world career exposure.",
     year: "2025",
   },
   {
     name: "Innovex Hub",
-    descriptor: "An independent NELSIO company",
-    sector: "Technology & Infrastructure",
+    relationship: "Backed by NELSIO",
+    sector: "Student Innovation & Startups",
+    tagline: "A platform where student ideas become real products.",
     summary:
-      "A software and systems organisation advancing technical infrastructure with precision, accountability, and long-term reliability.",
+      "Students, developers, and designers collaborate across AI, robotics, and automation. Build to Innovate.",
     year: "2025",
   },
   {
     name: "Apna Look",
-    descriptor: "An independent NELSIO company",
-    sector: "AI & Consumer",
+    relationship: "Early-stage concept",
+    sector: "AI & Fashion-Tech",
+    tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
-      "A personal styling platform that brings thoughtful intelligence to the way people discover, wear, and understand their own aesthetic.",
-    year: "2025",
+      "A concept exploring personalised style based on body type, skin tone, budget, and preference — combining products from multiple brands into complete looks.",
+    year: "Concept Stage",
   },
 ];
 
 function Companies() {
   return (
-    <Section id="companies" label="The NELSIO Companies">
+    <Section id="ventures" label="Portfolio & Ventures">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-4 max-w-[22ch]">
-          Independent companies.
+          Independent ventures.
           <br />
           <span className="text-foreground/40">One shared conviction.</span>
         </h2>
         <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
-          Each company within NELSIO operates independently, with its own identity,
-          leadership, and mission. What they share is the standard they are held to.
+          Each venture within NELSIO has its own identity, leadership, and mission — whether we operate it directly, back it from behind the scenes, or are still shaping it as an idea. What they share is the standard NELSIO holds them to.
         </p>
       </Reveal>
 
       <div className="space-y-0 border-t border-black/[0.07]">
         {COMPANIES.map((c, i) => (
           <Reveal key={c.name} delay={i * 40}>
-            <a
-              href="#contact"
-              className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 md:py-14 border-b border-black/[0.07] transition-colors duration-300 hover:bg-[oklch(0.985_0_0)]/80 backdrop-blur-[1px] -mx-6 px-6 rounded"
-            >
-              {/* Company name — large editorial */}
-              <div className="md:w-64 shrink-0">
-                <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium tracking-[-0.04em] text-foreground leading-none group-hover:text-foreground/70 transition-colors duration-300">
+            <div className="group flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-9 md:py-12 border-b border-black/[0.07] -mx-6 px-6">
+              {/* Venture name */}
+              <div className="md:w-56 shrink-0">
+                <h3 className="text-[clamp(1.5rem,3vw,2.2rem)] font-medium tracking-[-0.04em] text-foreground leading-none">
                   {c.name}
                 </h3>
-                <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/35 mt-2">
+                <p className="text-[10px] uppercase tracking-[0.15em] text-foreground/30 mt-2">
                   {c.year}
                 </p>
               </div>
 
               {/* Details */}
               <div className="flex-1 min-w-0">
-                <p className="text-[11px] uppercase tracking-[0.15em] text-foreground/35 mb-3">
-                  {c.sector}
+                <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                  <span className="inline-block px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] border border-black/[0.12] text-foreground/70 rounded">
+                    {c.relationship}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-[0.15em] text-foreground/35">
+                    {c.sector}
+                  </span>
+                </div>
+                <p className="text-[15px] font-medium text-foreground/80 mb-1.5 tracking-[-0.01em]">
+                  {c.tagline}
                 </p>
-                <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/55 max-w-[52ch]">
+                <p className="text-[14px] leading-[1.7] text-foreground/45 max-w-[52ch]">
                   {c.summary}
                 </p>
               </div>
 
               {/* Arrow */}
-              <div className="shrink-0 self-center md:self-start mt-0 md:mt-3">
-                <span className="inline-flex items-center gap-1.5 text-[13px] text-foreground/35 group-hover:text-foreground transition-colors duration-300">
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <div className="shrink-0 self-center">
+                <span className="inline-flex items-center gap-1.5 text-[12px] text-foreground/30 group-hover:text-foreground transition-colors duration-300">
+                  <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
-            </a>
+            </div>
           </Reveal>
         ))}
       </div>
@@ -676,6 +673,47 @@ function Philosophy() {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Governance nod
+───────────────────────────────────────────────────────────── */
+
+function Governance() {
+  return (
+    <Section id="governance" label="How we operate">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-black/[0.07]">
+        {[
+          {
+            n: "01",
+            label: "Standard",
+            body: "Every venture that carries the NELSIO name is held to the same standard — regardless of its stage, size, or structure. The bar does not move.",
+          },
+          {
+            n: "02",
+            label: "Accountability",
+            body: "We do not take positions without standing behind them. If NELSIO backs a venture, it is because we believe in it — and we remain accountable to that belief.",
+          },
+          {
+            n: "03",
+            label: "Transparency",
+            body: "We intend to publish a governance report annually as NELSIO matures — detailing how each venture is structured, supported, and held to account.",
+          },
+        ].map((item, i) => (
+          <Reveal key={item.n} delay={i * 70}>
+            <div className="pt-8 pb-10 pr-0 md:pr-12 border-b border-black/[0.07] md:border-b-0 md:border-r md:last:border-r-0">
+              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-foreground/28 mb-4">
+                {item.n} — {item.label}
+              </p>
+              <p className="text-[15px] leading-[1.8] text-foreground/55">
+                {item.body}
+              </p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
    Looking Forward
 ───────────────────────────────────────────────────────────── */
 
@@ -702,7 +740,7 @@ function LookingForward() {
             <p>
               What comes next will not be announced in advance. It will arrive
               when it is ready. And when it does, it will carry the same
-              standard every NELSIO company is built to.
+              standard every venture under NELSIO is held to.
             </p>
             <p className="text-foreground/80 font-medium text-[16px]">
               There is no urgency here. Only intention.
@@ -793,16 +831,30 @@ function Contact() {
           <p className="mt-5 text-[15px] leading-[1.75] text-foreground/50 max-w-[38ch]">
             If what we stand for resonates with you, we would be glad to hear from you.
           </p>
+
+          <div className="mt-10 border-t border-black/[0.07] pt-6">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-1">
+              Headquarters
+            </p>
+            <p className="text-[15px] text-foreground/70 font-medium">
+              Bengaluru, India
+            </p>
+            <p className="text-[13px] text-foreground/45 mt-0.5">
+              Operating globally across student initiatives and independent ventures.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={80} className="md:col-span-5 md:col-start-7">
+          {/* TODO: Verify live MX records and active mailboxes for hello@nelsio.com before public release */}
           <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2">
             General
           </p>
           <CopyEmail email="hello@nelsio.com" />
 
+          {/* TODO: Verify live MX records and active mailboxes for ventures@nelsio.com before public release */}
           <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2 mt-8">
-            Companies
+            Ventures
           </p>
           <CopyEmail email="ventures@nelsio.com" />
         </Reveal>
@@ -820,40 +872,92 @@ function Footer() {
     <footer className="border-t border-black/[0.07] py-12">
       <div className="container-nelsio">
         {/* Top row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8 mb-10">
-          <FooterLogo />
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-12 mb-12">
+          <div className="flex flex-col gap-6">
+            <FooterLogo />
+            <p className="text-[13px] text-foreground/40 max-w-[28ch] leading-[1.7]">
+              The venture behind independent companies.
+            </p>
+          </div>
 
-          <nav className="flex flex-wrap gap-6">
+          {/* Ventures list */}
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/30 mb-4">
+              Portfolio & Ventures
+            </p>
+            <ul className="space-y-2.5">
+              {COMPANIES.map((c) => (
+                <li key={c.name}>
+                  <a
+                    href="#ventures"
+                    className="text-[13px] text-foreground/50 hover:text-foreground transition-colors flex items-center gap-2"
+                  >
+                    <span>{c.name}</span>
+                    <span className="text-[10px] uppercase tracking-[0.1em] text-foreground/25">
+                      {c.relationship}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Navigation */}
+          <nav className="flex flex-col gap-2.5">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/30 mb-1.5">
+              Navigation
+            </p>
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[13px] text-foreground/40 hover:text-foreground transition-colors"
+                className="text-[13px] text-foreground/50 hover:text-foreground transition-colors"
               >
                 {l.label}
               </a>
             ))}
           </nav>
 
-          <a
-            href="https://www.linkedin.com/company/nelsio/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 text-[13px] text-foreground/40 hover:text-foreground transition-colors"
-          >
-            LinkedIn
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          {/* TODO: Verify LinkedIn organization page (https://www.linkedin.com/company/nelsio/) is live before launch */}
+          <div className="flex flex-col gap-2.5">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/30 mb-1.5">
+              Connect
+            </p>
+            <a
+              href="https://www.linkedin.com/company/nelsio/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-[13px] text-foreground/50 hover:text-foreground transition-colors"
+            >
+              LinkedIn
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+            <Link
+              to="/letter"
+              className="text-[13px] text-foreground/50 hover:text-foreground transition-colors"
+            >
+              Founders' Letter
+            </Link>
+          </div>
         </div>
 
-        {/* Bottom row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-black/[0.06] pt-8">
-          <p className="text-[12px] text-foreground/30">
-            © {new Date().getFullYear()} NELSIO. All rights reserved.
-          </p>
-          <p className="text-[12px] text-foreground/30 italic">
-            Built with the patience that enduring things require.
-          </p>
+        {/* Bottom row — Legal & Jurisdiction */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-black/[0.06] pt-8">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <p className="text-[12px] text-foreground/35">
+              © {new Date().getFullYear()} NELSIO. All rights reserved.
+            </p>
+            {/* TODO: Create and link active Privacy Policy and Terms of Service pages before public launch */}
+            <a href="#privacy" className="text-[12px] text-foreground/35 hover:text-foreground/70 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#terms" className="text-[12px] text-foreground/35 hover:text-foreground/70 transition-colors">
+              Terms of Service
+            </a>
+          </div>
+          <div className="text-[12px] text-foreground/35">
+            <span>Bengaluru, India</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -865,8 +969,28 @@ function Footer() {
 ───────────────────────────────────────────────────────────── */
 
 function Index() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "NELSIO",
+    description:
+      "A venture backing, building, and incubating independent companies and student initiatives.",
+    foundingDate: "2025",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bengaluru",
+      addressCountry: "IN",
+    },
+    url: "https://nelsio.com",
+    sameAs: ["https://www.linkedin.com/company/nelsio/"],
+  };
+
   return (
     <div className="min-h-screen bg-white text-foreground selection:bg-foreground selection:text-white antialiased relative overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Global Architectural Texture ("Like grid in the background not the grid") ── */}
       <div
         aria-hidden="true"
@@ -878,9 +1002,10 @@ function Index() {
           <Hero />
           <About />
           <Founders />
-          <Vision />
+          <MissionVision />
           <Companies />
           <Philosophy />
+          <Governance />
           <LookingForward />
           <Closing />
           <Contact />
