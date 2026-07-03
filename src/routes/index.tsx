@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Copy, Check, ArrowRight } from "lucide-react";
-import nelsioLogoImg from "@/assets/nelsio-logo.png";
 import mohammedImg from "@/assets/mohammed-nadeem.png";
 import pavanImg from "@/assets/pavan-ug.png";
 
@@ -28,11 +27,6 @@ export const Route = createFileRoute("/")({
    Utilities
 ───────────────────────────────────────────────────────────── */
 
-function useLogoFallback() {
-  const [err, setErr] = useState(false);
-  return [err, () => setErr(true)] as const;
-}
-
 function useFadeIn(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -56,57 +50,29 @@ function useFadeIn(threshold = 0.15) {
   return { ref, visible };
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Logo variants
-───────────────────────────────────────────────────────────── */
-
 function NavLogo() {
-  const [err, onErr] = useLogoFallback();
-  return err ? (
-    <span className="text-[18px] font-semibold tracking-[-0.04em] text-foreground lowercase">
+  return (
+    <span className="text-[19px] font-semibold tracking-[-0.045em] text-foreground lowercase select-none">
       nelsio
     </span>
-  ) : (
-    <img
-      src={nelsioLogoImg}
-      alt="NELSIO"
-      className="h-[22px] w-auto"
-      onError={onErr}
-    />
   );
 }
 
 function HeroWordmark() {
-  const [err, onErr] = useLogoFallback();
-  return err ? (
-    <div
-      className="w-full select-none"
-      style={{ lineHeight: 0 }}
-    >
-      <span className="text-[22vw] font-semibold tracking-[-0.05em] leading-none text-foreground lowercase block">
+  return (
+    <div className="w-full select-none" style={{ lineHeight: 0.82 }}>
+      <span className="text-[21.5vw] font-semibold tracking-[-0.055em] text-foreground lowercase block">
         nelsio
       </span>
     </div>
-  ) : (
-    <img
-      src={nelsioLogoImg}
-      alt="NELSIO"
-      className="w-full select-none block"
-      style={{ maxWidth: "100%", display: "block" }}
-      draggable={false}
-      onError={onErr}
-    />
   );
 }
 
 function FooterLogo() {
-  const [err, onErr] = useLogoFallback();
-  return err ? (
-    <span className="text-[16px] font-semibold tracking-[-0.04em] text-foreground lowercase">
+  return (
+    <span className="text-[17px] font-semibold tracking-[-0.045em] text-foreground lowercase select-none">
       nelsio
     </span>
-  ) : (
-    <img src={nelsioLogoImg} alt="NELSIO" className="h-5 w-auto" onError={onErr} />
   );
 }
 
