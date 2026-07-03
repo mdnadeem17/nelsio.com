@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction.",
+          "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact.",
       },
       { property: "og:title", content: "NELSIO" },
       {
@@ -117,7 +117,7 @@ function FooterLogo() {
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Vision", href: "#vision" },
-  { label: "Ventures", href: "#ventures" },
+  { label: "Products", href: "#products" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -261,7 +261,7 @@ function Hero() {
           {/* Ruled divider with metadata */}
           <div className="border-t border-black/[0.08] pt-6 pb-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/50 max-w-[46ch]">
-              NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction.
+              NELSIO is the parent company behind our software products, platforms, and educational initiatives. We build technology and programs designed to last.
             </p>
             <a
               href="#about"
@@ -360,11 +360,11 @@ function About() {
         {[
           {
             n: "01",
-            text: "NELSIO is a parent organization — not a single conventional company, but the home structure that gives independent ventures the operational foundation, discipline, and time they need to grow.",
+            text: "NELSIO is the unified parent company and developer identity housing our distinct software products, platforms, and educational initiatives under one roof.",
           },
           {
             n: "02",
-            text: "The ventures under NELSIO operate independently across different sectors — from commercial platforms to student educational initiatives. As their parent organization, what unites them under NELSIO is our uncompromising long-term standard.",
+            text: "From commercial platforms like CUTZO to youth programs like IBZEN, each product serves a distinct mission while sharing our core engineering and design standards.",
           },
           {
             n: "03",
@@ -404,13 +404,13 @@ const FOUNDERS = [
   {
     name: "Mohammed Nadeem",
     role: "Co-Founder",
-    bio: "Focused on governance, venture structure, and long-term strategic direction.",
+    bio: "Focused on product vision, strategic direction, and building the long-term roadmap across NELSIO's platforms.",
     img: mohammedImg,
   },
   {
     name: "Pavan UG",
     role: "Co-Founder",
-    bio: "Focused on technical infrastructure, engineering excellence, and venture operations.",
+    bio: "Focused on software architecture, technical infrastructure, and engineering execution across all NELSIO products.",
     img: pavanImg,
   },
 ];
@@ -478,10 +478,10 @@ function MissionVision() {
               Mission
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              To build, guide, and endure.
+              To build, scale, and endure.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              NELSIO exists as the parent organization behind our independent businesses and student initiatives — giving them the governance, operational independence, and time they need to build lasting value.
+              NELSIO exists as the parent company created to design, build, and support our software applications and youth initiatives — giving each product the dedicated engineering and time it needs to scale.
             </p>
           </div>
         </Reveal>
@@ -493,10 +493,10 @@ function MissionVision() {
               Vision
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              A venture built to outlast its founders.
+              Platforms built to compound value.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              A generation from now, the standard NELSIO holds its ventures to will be its most enduring legacy. We are not optimising for the next milestone. We are building toward permanence.
+              A generation from now, the engineering quality and utility of our products will be our enduring legacy. We build toward permanence rather than short-term trends.
             </p>
           </div>
         </Reveal>
@@ -512,7 +512,7 @@ function MissionVision() {
 const COMPANIES = [
   {
     name: "CUTZO",
-    relationship: "Operating Venture",
+    relationship: "Flagship Product",
     sector: "Commerce & Services",
     tagline: "Smart appointments and queue management for salons.",
     summary:
@@ -521,7 +521,7 @@ const COMPANIES = [
   },
   {
     name: "IBZEN",
-    relationship: "Educational Initiative",
+    relationship: "Youth Initiative",
     sector: "Youth Innovation & Career Education",
     tagline: "Two-day workshops that change how school students see the future.",
     summary:
@@ -530,7 +530,7 @@ const COMPANIES = [
   },
   {
     name: "Innovex Hub",
-    relationship: "Student Initiative",
+    relationship: "Innovation Platform",
     sector: "Student Innovation & Startups",
     tagline: "A platform where student ideas become real products.",
     summary:
@@ -539,7 +539,7 @@ const COMPANIES = [
   },
   {
     name: "Apna Look",
-    relationship: "Concept Venture",
+    relationship: "Product Concept",
     sector: "AI & Fashion-Tech",
     tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
@@ -550,15 +550,15 @@ const COMPANIES = [
 
 function Companies() {
   return (
-    <Section id="ventures" label="Portfolio & Ventures">
+    <Section id="products" label="Products & Initiatives">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-4 max-w-[22ch]">
-          Independent ventures.
+          Our software products
           <br />
-          <span className="text-foreground/40">One shared conviction.</span>
+          <span className="text-foreground/40">& educational platforms.</span>
         </h2>
         <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
-          Each venture within NELSIO operates with independent leadership and purpose — from core commercial platforms to student educational initiatives. As their parent organization, what unites them under NELSIO is our uncompromising long-term standard.
+          All our applications and initiatives are built, maintained, and published under the NELSIO corporate umbrella — ensuring unified engineering quality and long-term support.
         </p>
       </Reveal>
 
@@ -684,17 +684,17 @@ function Governance() {
           {
             n: "01",
             label: "Standard",
-            body: "Every venture that carries the NELSIO name is held to the same standard — regardless of its stage, size, or structure. The bar does not move.",
+            body: "Every application or platform published under the NELSIO name is held to rigorous engineering and design standards before release.",
           },
           {
             n: "02",
             label: "Accountability",
-            body: "As a parent organization, we take full accountability for the ventures under our umbrella. Every business and initiative we operate carries our commitment to long-term value.",
+            body: "As the parent company and publisher, we take full responsibility for our software security, reliability, and user trust.",
           },
           {
             n: "03",
             label: "Transparency",
-            body: "We intend to publish an annual report as NELSIO matures — detailing how our parent organization guides, supports, and operates each venture in our group.",
+            body: "We maintain clear operational separation between our commercial products and educational initiatives under our parent identity.",
           },
         ].map((item, i) => (
           <Reveal key={item.n} delay={i * 70}>
@@ -876,20 +876,20 @@ function Footer() {
           <div className="flex flex-col gap-6">
             <FooterLogo />
             <p className="text-[13px] text-foreground/40 max-w-[28ch] leading-[1.7]">
-              The parent organization operating and guiding independent ventures.
+              The parent company behind our software products and youth initiatives.
             </p>
           </div>
 
           {/* Ventures list */}
           <div>
             <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/30 mb-4">
-              Portfolio & Ventures
+              Products & Initiatives
             </p>
             <ul className="space-y-2.5">
               {COMPANIES.map((c) => (
                 <li key={c.name}>
                   <a
-                    href="#ventures"
+                    href="#products"
                     className="text-[13px] text-foreground/50 hover:text-foreground transition-colors flex items-center gap-2"
                   >
                     <span>{c.name}</span>
@@ -974,7 +974,7 @@ function Index() {
     "@type": "Organization",
     name: "NELSIO",
     description:
-      "The parent organization operating and guiding independent businesses and student initiatives.",
+      "The parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
     foundingDate: "2025",
     address: {
       "@type": "PostalAddress",

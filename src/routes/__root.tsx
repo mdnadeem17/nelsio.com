@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "NELSIO" },
-      { name: "description", content: "NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction." },
+      { name: "description", content: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact." },
       { name: "author", content: "NELSIO" },
       { property: "og:title", content: "NELSIO" },
       { property: "og:description", content: "An institution of enduring purpose." },
