@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "NELSIO" },
-      { name: "description", content: "NELSIO is the venture behind independent ventures — building, backing, and standing behind them with conviction and long-term purpose." },
+      { name: "description", content: "NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction." },
       { name: "author", content: "NELSIO" },
       { property: "og:title", content: "NELSIO" },
       { property: "og:description", content: "An institution of enduring purpose." },

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "NELSIO is the venture behind independent ventures — operating, backing, and incubating ideas with conviction and long-term purpose.",
+          "NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction.",
       },
       { property: "og:title", content: "NELSIO" },
       {
@@ -261,7 +261,7 @@ function Hero() {
           {/* Ruled divider with metadata */}
           <div className="border-t border-black/[0.08] pt-6 pb-0 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <p className="text-[15px] md:text-[16px] leading-[1.75] text-foreground/50 max-w-[46ch]">
-              To build, back, and stand behind — this is the work NELSIO does, across every venture that carries its name.
+              NELSIO is the parent organization behind independent ventures — building, operating, and guiding businesses with enduring conviction.
             </p>
             <a
               href="#about"
@@ -360,11 +360,11 @@ function About() {
         {[
           {
             n: "01",
-            text: "NELSIO is a venture — not a company in the conventional sense, but a venture that gives independent companies the backing, discipline, and time they need to grow into their own identity.",
+            text: "NELSIO is a parent organization — not a single conventional company, but the home structure that gives independent ventures the operational foundation, discipline, and time they need to grow.",
           },
           {
             n: "02",
-            text: "The companies under NELSIO are not uniform. Some are built from within. Others are student-led initiatives we back and stand behind. Some are early ideas still finding their shape. What unites them is the standard NELSIO holds them to.",
+            text: "The ventures under NELSIO operate independently across different sectors — from commercial platforms to student educational initiatives. As their parent organization, what unites them under NELSIO is our uncompromising long-term standard.",
           },
           {
             n: "03",
@@ -478,10 +478,10 @@ function MissionVision() {
               Mission
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              To build, back, and stand behind.
+              To build, guide, and endure.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              NELSIO exists to give independent ventures the structure, standard, and time they need to become something real. We operate some directly, back others from behind the scenes, and incubate ideas still finding their shape.
+              NELSIO exists as the parent organization behind our independent businesses and student initiatives — giving them the governance, operational independence, and time they need to build lasting value.
             </p>
           </div>
         </Reveal>
@@ -512,7 +512,7 @@ function MissionVision() {
 const COMPANIES = [
   {
     name: "CUTZO",
-    relationship: "Operated by NELSIO",
+    relationship: "Operating Venture",
     sector: "Commerce & Services",
     tagline: "Smart appointments and queue management for salons.",
     summary:
@@ -521,7 +521,7 @@ const COMPANIES = [
   },
   {
     name: "IBZEN",
-    relationship: "Backed by NELSIO",
+    relationship: "Educational Initiative",
     sector: "Youth Innovation & Career Education",
     tagline: "Two-day workshops that change how school students see the future.",
     summary:
@@ -530,7 +530,7 @@ const COMPANIES = [
   },
   {
     name: "Innovex Hub",
-    relationship: "Backed by NELSIO",
+    relationship: "Student Initiative",
     sector: "Student Innovation & Startups",
     tagline: "A platform where student ideas become real products.",
     summary:
@@ -539,7 +539,7 @@ const COMPANIES = [
   },
   {
     name: "Apna Look",
-    relationship: "Early-stage concept",
+    relationship: "Concept Venture",
     sector: "AI & Fashion-Tech",
     tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
@@ -558,7 +558,7 @@ function Companies() {
           <span className="text-foreground/40">One shared conviction.</span>
         </h2>
         <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
-          Each venture within NELSIO has its own identity, leadership, and mission — whether we operate it directly, back it from behind the scenes, or are still shaping it as an idea. What they share is the standard NELSIO holds them to.
+          Each venture within NELSIO operates with independent leadership and purpose — from core commercial platforms to student educational initiatives. As their parent organization, what unites them under NELSIO is our uncompromising long-term standard.
         </p>
       </Reveal>
 
@@ -616,7 +616,7 @@ const PRINCIPLES = [
   {
     n: "I",
     title: "Think beyond generations.",
-    body: "Short-term returns are not our objective. We invest time in things that compound: knowledge, reputation, and quality of work.",
+    body: "Short-term gains are not our objective. We dedicate time and patience to things that compound: knowledge, reputation, and quality of work.",
   },
   {
     n: "II",
@@ -689,12 +689,12 @@ function Governance() {
           {
             n: "02",
             label: "Accountability",
-            body: "We do not take positions without standing behind them. If NELSIO backs a venture, it is because we believe in it — and we remain accountable to that belief.",
+            body: "As a parent organization, we take full accountability for the ventures under our umbrella. Every business and initiative we operate carries our commitment to long-term value.",
           },
           {
             n: "03",
             label: "Transparency",
-            body: "We intend to publish a governance report annually as NELSIO matures — detailing how each venture is structured, supported, and held to account.",
+            body: "We intend to publish an annual report as NELSIO matures — detailing how our parent organization guides, supports, and operates each venture in our group.",
           },
         ].map((item, i) => (
           <Reveal key={item.n} delay={i * 70}>
@@ -876,7 +876,7 @@ function Footer() {
           <div className="flex flex-col gap-6">
             <FooterLogo />
             <p className="text-[13px] text-foreground/40 max-w-[28ch] leading-[1.7]">
-              The venture behind independent companies.
+              The parent organization operating and guiding independent ventures.
             </p>
           </div>
 
@@ -974,7 +974,7 @@ function Index() {
     "@type": "Organization",
     name: "NELSIO",
     description:
-      "A venture backing, building, and incubating independent companies and student initiatives.",
+      "The parent organization operating and guiding independent businesses and student initiatives.",
     foundingDate: "2025",
     address: {
       "@type": "PostalAddress",
