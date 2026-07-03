@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "NELSIO" },
       {
         property: "og:description",
-        content: "A parent company of enduring purpose.",
+        content: "Built for enduring purpose.",
       },
     ],
   }),
@@ -117,7 +117,7 @@ function FooterLogo() {
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Vision", href: "#vision" },
-  { label: "Products", href: "#products" },
+  { label: "Ecosystem", href: "#ecosystem" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Contact", href: "#contact" },
 ];
@@ -242,7 +242,7 @@ function Hero() {
           Est. 2025
         </p>
         <p className="text-[11px] uppercase tracking-[0.25em] text-foreground/35 select-none mt-1 hidden sm:block">
-          A parent company of enduring purpose
+          Built for enduring purpose
         </p>
       </div>
 
@@ -349,9 +349,9 @@ function About() {
       {/* Large anchor statement */}
       <Reveal>
         <h2 className="text-[clamp(2.4rem,4.5vw,3.8rem)] font-medium leading-[1.1] tracking-[-0.04em] text-foreground max-w-[22ch] mb-16 md:mb-20">
-          A parent company
+          Built to endure.
           <br />
-          <span className="text-foreground/38">in the making.</span>
+          <span className="text-foreground/38">Engineered to scale.</span>
         </h2>
       </Reveal>
 
@@ -360,15 +360,15 @@ function About() {
         {[
           {
             n: "01",
-            text: "NELSIO is the parent company behind our software applications and educational programs — housing our technology under one unified roof.",
+            text: "NELSIO is the unified parent company and developer identity housing our distinct platforms, applications, and educational initiatives under one roof.",
           },
           {
             n: "02",
-            text: "From CUTZO to IBZEN, each initiative operates independently while sharing our uncompromising engineering standards.",
+            text: "From commercial platforms like CUTZO to youth initiatives like IBZEN, each operates with independent focus while sharing our rigorous engineering standard.",
           },
           {
             n: "03",
-            text: "We do not build for the next quarter. We build for the next decade. That long-term focus shapes everything we do.",
+            text: "We are not built to optimize for quarters. We are built to be measured in decades. That distinction shapes every decision we make.",
             accent: true,
           },
         ].map((item, i) => (
@@ -404,13 +404,13 @@ const FOUNDERS = [
   {
     name: "Mohammed Nadeem",
     role: "Co-Founder",
-    bio: "Focused on product vision, strategic direction, and building the long-term roadmap across NELSIO's platforms.",
+    bio: "Focused on strategic vision, long-term direction, and building the roadmap across NELSIO's platforms.",
     img: mohammedImg,
   },
   {
     name: "Pavan UG",
     role: "Co-Founder",
-    bio: "Focused on software architecture, technical infrastructure, and engineering execution across all NELSIO products.",
+    bio: "Focused on software architecture, technical infrastructure, and engineering execution across all NELSIO platforms.",
     img: pavanImg,
   },
 ];
@@ -481,7 +481,7 @@ function MissionVision() {
               To build, scale, and endure.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              NELSIO is the parent foundation behind our applications and youth initiatives — giving each product the dedicated engineering and time it needs to grow.
+              NELSIO exists as the parent company created to design, build, and support our software applications and youth initiatives — giving each product the dedicated engineering and time it needs to scale.
             </p>
           </div>
         </Reveal>
@@ -493,10 +493,10 @@ function MissionVision() {
               Vision
             </p>
             <h2 className="text-[clamp(1.6rem,2.5vw,2rem)] font-medium leading-[1.2] tracking-[-0.03em] text-foreground mb-5">
-              Products built to last.
+              Platforms built to compound value.
             </h2>
             <p className="text-[16px] leading-[1.8] text-foreground/55 max-w-[42ch]">
-              Years from now, the reliability and utility of our software will be our enduring legacy. We build for permanence over fleeting trends.
+              A generation from now, the engineering quality and utility of our platforms will be our enduring legacy. We build toward permanence rather than short-term trends.
             </p>
           </div>
         </Reveal>
@@ -532,7 +532,7 @@ const COMPANIES = [
     name: "Innovex Hub",
     relationship: "Innovation Platform",
     sector: "Student Innovation & Startups",
-    tagline: "A platform where student ideas become real products.",
+    tagline: "A platform where student ideas become real innovations.",
     summary:
       "Students, developers, and designers collaborate across AI, robotics, and automation. Build to Innovate.",
     year: "2025",
@@ -543,22 +543,22 @@ const COMPANIES = [
     sector: "AI & Fashion-Tech",
     tagline: "AI-powered outfit recommendations tailored to you.",
     summary:
-      "A concept exploring personalised style based on body type, skin tone, budget, and preference — combining products from multiple brands into complete looks.",
+      "A concept exploring personalised style based on body type, skin tone, budget, and preference — combining innovations from multiple brands into complete looks.",
     year: "Concept Stage",
   },
 ];
 
 function Companies() {
   return (
-    <Section id="products" label="Products & Initiatives">
+    <Section id="ecosystem" label="Ecosystem & Initiatives">
       <Reveal>
         <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground mb-4 max-w-[22ch]">
-          Our products.
+          Distinct platforms.
           <br />
-          <span className="text-foreground/40">& initiatives.</span>
+          <span className="text-foreground/40">One shared standard.</span>
         </h2>
         <p className="text-[16px] leading-[1.75] text-foreground/50 max-w-[50ch] mb-16 md:mb-24">
-          All our applications and initiatives are built, maintained, and published under the NELSIO corporate umbrella — ensuring unified engineering quality and long-term support.
+          Every platform and initiative within our group operates with dedicated purpose — united by uncompromising engineering quality and long-term commitment.
         </p>
       </Reveal>
 
@@ -615,28 +615,28 @@ function Companies() {
 const PRINCIPLES = [
   {
     n: "I",
-    title: "Think in decades.",
-    body: "We dedicate patience and focus to things that compound: reliability, security, and quality of work.",
+    title: "Think beyond generations.",
+    body: "Short-term gains are not our objective. We dedicate time and patience to things that compound: knowledge, reputation, and quality of work.",
   },
   {
     n: "II",
-    title: "Pursue excellence.",
-    body: "There are no acceptable shortcuts. The standard does not move — it only rises.",
+    title: "Pursue excellence without compromise.",
+    body: "There are no acceptable shortcuts in work we put our name to. The standard does not move. It only rises.",
   },
   {
     n: "III",
     title: "Move with intention.",
-    body: "Deliberate design outperforms reactive speed. We think carefully before we build.",
+    body: "Deliberate action outperforms reactive speed. We think carefully before we commit, and we commit fully once we do.",
   },
   {
     n: "IV",
     title: "Respect the craft.",
-    body: "Whether it is code, interface design, or user experience — craftsmanship is our baseline.",
+    body: "Whether it is a product, a service, or a sentence: it deserves care. Craftsmanship is not optional. It is the baseline.",
   },
   {
     n: "V",
     title: "Create lasting value.",
-    body: "We measure success not by launch day, but by whether our products continue to serve people years later.",
+    body: "We measure success not by what we launch, but by what remains, and whether it continues to serve those who depend on it.",
   },
 ];
 
@@ -684,17 +684,17 @@ function Governance() {
           {
             n: "01",
             label: "Standard",
-            body: "Every product published under the NELSIO name undergoes rigorous engineering and security checks before release.",
+            body: "Every application or platform published under the NELSIO name is held to rigorous engineering and design standards before release.",
           },
           {
             n: "02",
             label: "Accountability",
-            body: "As the parent publisher, we take full responsibility for our software reliability and user data privacy.",
+            body: "As the parent company and publisher, we take full responsibility for our software security, reliability, and user trust.",
           },
           {
             n: "03",
             label: "Transparency",
-            body: "We maintain clear separation between our commercial products and educational initiatives under our unified identity.",
+            body: "We maintain clear operational separation between our software platforms and educational initiatives under our parent identity.",
           },
         ].map((item, i) => (
           <Reveal key={item.n} delay={i * 70}>
@@ -721,19 +721,24 @@ function LookingForward() {
   return (
     <Section id="forward" label="Looking Forward">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-        <Reveal>
-          <div className="max-w-[48ch] space-y-6 text-[18px] md:text-[22px] leading-[1.65] text-foreground/60">
-            <h2 className="text-[clamp(2.2rem,4vw,3.2rem)] font-medium leading-[1.1] tracking-[-0.035em] text-foreground mb-8">
-              What comes next.
-            </h2>
+        <Reveal className="md:col-span-5">
+          <h2 className="text-[clamp(2rem,3.5vw,2.8rem)] font-medium leading-[1.14] tracking-[-0.035em] text-foreground">
+            Quietly building
+            <br />
+            what endures.
+          </h2>
+        </Reveal>
+
+        <Reveal delay={100} className="md:col-span-6 md:col-start-7">
+          <div className="space-y-6 text-[17px] leading-[1.8] text-foreground/55">
             <p>
-              We are in the early chapters of a much longer story. NELSIO was
-              not created to grow quickly or chase trends. We set out to build
-              software that lasts.
+              We are in the early chapters of a much longer story. NELSIO has
+              not set out to grow quickly, nor to accumulate. We have set out to
+              do good work, the kind that accumulates quietly into something
+              worthy of the time it took.
             </p>
             <p>
-              What comes next will arrive when it is ready. And when it does,
-              it will carry the same standard every NELSIO product is held to.
+              Future developments are crafted with deliberate care rather than artificial deadlines. Every platform launched under our parent organization carries our enduring standard of engineering and utility.
             </p>
             <p className="text-foreground/80 font-medium text-[16px]">
               There is no urgency here. Only intention.
@@ -833,7 +838,7 @@ function Contact() {
               Bengaluru, India
             </p>
             <p className="text-[13px] text-foreground/45 mt-0.5">
-              Operating globally across software products and youth initiatives.
+              Operating globally across software platforms and youth initiatives.
             </p>
           </div>
         </Reveal>
@@ -847,7 +852,7 @@ function Contact() {
 
           {/* TODO: Verify live MX records and active mailboxes for ventures@nelsio.com before public release */}
           <p className="text-[11px] uppercase tracking-[0.22em] text-foreground/35 mb-2 mt-8">
-            Products & Initiatives
+            Ecosystem & Initiatives
           </p>
           <CopyEmail email="ventures@nelsio.com" />
         </Reveal>
@@ -869,20 +874,20 @@ function Footer() {
           <div className="flex flex-col gap-6">
             <FooterLogo />
             <p className="text-[13px] text-foreground/40 max-w-[28ch] leading-[1.7]">
-              The parent company behind our software products and youth initiatives.
+              The parent company behind our software platforms and youth initiatives.
             </p>
           </div>
 
           {/* Ventures list */}
           <div>
             <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/30 mb-4">
-              Products & Initiatives
+              Ecosystem & Initiatives
             </p>
             <ul className="space-y-2.5">
               {COMPANIES.map((c) => (
                 <li key={c.name}>
                   <a
-                    href="#products"
+                    href="#ecosystem"
                     className="text-[13px] text-foreground/50 hover:text-foreground transition-colors flex items-center gap-2"
                   >
                     <span>{c.name}</span>
