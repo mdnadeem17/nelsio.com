@@ -77,15 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NELSIO" },
+      { title: "NELSIO — Built to endure. Engineered to scale." },
       { name: "description", content: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact." },
+      { name: "keywords", content: "NELSIO, CUTZO, IBZEN, Mohammed Nadeem, Pavan UG, software platforms, technology incubator, parent company, startups India, engineering standard" },
       { name: "author", content: "NELSIO" },
-      { property: "og:title", content: "NELSIO" },
-      { property: "og:description", content: "An institution of enduring purpose." },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { property: "og:title", content: "NELSIO — Built to endure. Engineered to scale." },
+      { property: "og:description", content: "An institution of enduring purpose. Parent company behind CUTZO, IBZEN, and emerging technology initiatives." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:url", content: "https://nelsio.com" },
+      { property: "og:site_name", content: "NELSIO" },
+      { property: "og:image", content: "https://nelsio.com/nelsio-logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "NELSIO" },
+      { name: "twitter:description", content: "Parent company behind CUTZO, IBZEN, and emerging technology initiatives." },
+      { name: "twitter:image", content: "https://nelsio.com/nelsio-logo.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://nelsio.com" },
+      { rel: "icon", type: "image/png", href: "/nelsio-logo.png" },
+      { rel: "shortcut icon", type: "image/png", href: "/nelsio-logo.png" },
+      { rel: "apple-touch-icon", href: "/nelsio-logo.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -105,10 +117,58 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "NELSIO",
+    url: "https://nelsio.com",
+    logo: "https://nelsio.com/nelsio-logo.png",
+    description: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
+    founder: [
+      {
+        "@type": "Person",
+        name: "Mohammed Nadeem",
+        jobTitle": "Co-Founder",
+      },
+      {
+        "@type": "Person",
+        name: "Pavan UG",
+        jobTitle": "Co-Founder",
+      },
+    ],
+    subOrganization: [
+      {
+        "@type": "Organization",
+        name: "CUTZO",
+        description: "Smart appointments and queue management for salons.",
+      },
+      {
+        "@type": "Organization",
+        name: "IBZEN",
+        description: "Youth Innovation & Career Education.",
+      },
+    ],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "NELSIO",
+    url: "https://nelsio.com",
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body>
         {children}

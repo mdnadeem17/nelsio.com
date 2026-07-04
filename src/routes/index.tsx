@@ -8,17 +8,21 @@ import pavanImg from "@/assets/pavan-ug.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NELSIO" },
+      { title: "NELSIO — Built to endure. Engineered to scale." },
       {
         name: "description",
         content:
           "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact.",
       },
-      { property: "og:title", content: "NELSIO" },
+      { name: "keywords", content: "NELSIO, CUTZO, IBZEN, Mohammed Nadeem, Pavan UG, software platforms, technology incubator, parent company, startups India" },
+      { property: "og:title", content: "NELSIO — Built to endure. Engineered to scale." },
       {
         property: "og:description",
-        content: "Built for enduring purpose.",
+        content: "Built for enduring purpose. The parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
       },
+      { property: "og:url", content: "https://nelsio.com" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://nelsio.com/nelsio-logo.png" },
     ],
   }),
   component: Index,
@@ -70,7 +74,7 @@ function NavLogo() {
     <img
       src={nelsioLogoImg}
       alt="NELSIO"
-      className="h-7 md:h-8 w-auto object-contain select-none"
+      className="h-[65px] md:h-[80px] w-auto object-contain select-none mix-blend-multiply -my-4"
       onError={onErr}
     />
   );
@@ -88,11 +92,11 @@ function HeroWordmark() {
       </span>
     </div>
   ) : (
-    <div className="w-full flex justify-center items-center py-2 md:py-6 overflow-hidden">
+    <div className="w-full flex justify-center items-center py-4 md:py-10 overflow-visible">
       <img
         src={nelsioLogoImg}
         alt="NELSIO"
-        className="w-full max-w-[1300px] h-auto object-contain mx-auto select-none block"
+        className="w-[250%] max-w-none h-auto object-contain mx-auto select-none block mix-blend-multiply"
         draggable={false}
         onError={onErr}
       />
@@ -107,7 +111,7 @@ function FooterLogo() {
       nelsio
     </span>
   ) : (
-    <img src={nelsioLogoImg} alt="NELSIO" className="h-6 w-auto object-contain select-none" onError={onErr} />
+    <img src={nelsioLogoImg} alt="NELSIO" className="h-[50px] md:h-[60px] w-auto object-contain select-none mix-blend-multiply -my-3" onError={onErr} />
   );
 }
 
@@ -249,6 +253,7 @@ function Hero() {
         <div className="container-nelsio relative z-10 w-full pb-0">
           {/* Statement headline */}
           <h1 className="text-[clamp(2.6rem,6vw,5rem)] font-medium leading-[1.08] tracking-[-0.04em] text-foreground max-w-[16ch] mb-12 md:mb-16">
+            <span className="sr-only">NELSIO — </span>
             Some things
             <br />
             are worth{" "}
