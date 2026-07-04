@@ -8,6 +8,7 @@ import pavanImg from "@/assets/pavan-ug.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { name: "google-site-verification", content: "ISryf9QA-Y9LA4oYboKZoZgGED28i1HkVWaXE4l8uyU" },
       { title: "NELSIO — Built to endure. Engineered to scale." },
       {
         name: "description",

@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "google-site-verification", content: "raZ8y9X_en1M-Mizo8p4kJ9WfbFcd5kaXCzLYneMbHk" },
+      { name: "google-site-verification", content: "ISryf9QA-Y9LA4oYboKZoZgGED28i1HkVWaXE4l8uyU" },
       { title: "NELSIO — Built to endure. Engineered to scale." },
       { name: "description", content: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact." },
       { name: "keywords", content: "NELSIO, CUTZO, IBZEN, Mohammed Nadeem, Pavan UG, software platforms, technology incubator, parent company, startups India, engineering standard" },
