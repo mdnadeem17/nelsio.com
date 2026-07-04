@@ -129,12 +129,12 @@ function RootShell({ children }: { children: ReactNode }) {
       {
         "@type": "Person",
         name: "Mohammed Nadeem",
-        jobTitle": "Co-Founder",
+        "jobTitle": "Co-Founder",
       },
       {
         "@type": "Person",
         name: "Pavan UG",
-        jobTitle": "Co-Founder",
+        "jobTitle": "Co-Founder",
       },
     ],
     subOrganization: [
