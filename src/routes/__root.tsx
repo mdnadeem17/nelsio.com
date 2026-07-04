@@ -125,6 +125,13 @@ function RootShell({ children }: { children: ReactNode }) {
     url: "https://nelsio.com",
     logo: "https://nelsio.com/nelsio-logo.png",
     description: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
+    foundingDate: "2025",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bengaluru",
+      addressCountry: "IN",
+    },
+    sameAs: ["https://www.linkedin.com/company/nelsio/"],
     founder: [
       {
         "@type": "Person",

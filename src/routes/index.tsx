@@ -956,28 +956,8 @@ function Footer() {
 ───────────────────────────────────────────────────────────── */
 
 function Index() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "NELSIO",
-    description:
-      "The parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
-    foundingDate: "2025",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Bengaluru",
-      addressCountry: "IN",
-    },
-    url: "https://nelsio.com",
-    sameAs: ["https://www.linkedin.com/company/nelsio/"],
-  };
-
   return (
     <div className="min-h-screen bg-white text-foreground selection:bg-foreground selection:text-white antialiased relative overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {/* ── Global Architectural Texture ("Like grid in the background not the grid") ── */}
       <div
         aria-hidden="true"

@@ -12,6 +12,17 @@ export const Route = createFileRoute("/letter")({
         content:
           "A direct note from Mohammed Nadeem and Pavan UG on why NELSIO exists, what it is built to become, and the standard it holds itself to.",
       },
+      { property: "og:title", content: "A Letter from our Founders — NELSIO" },
+      {
+        property: "og:description",
+        content: "A direct note from Mohammed Nadeem and Pavan UG on why NELSIO exists, what it is built to become, and the standard it holds itself to.",
+      },
+      { property: "og:url", content: "https://nelsio.com/letter" },
+      { name: "twitter:title", content: "A Letter from our Founders — NELSIO" },
+      {
+        name: "twitter:description",
+        content: "A direct note from Mohammed Nadeem and Pavan UG on why NELSIO exists, what it is built to become, and the standard it holds itself to.",
+      },
     ],
   }),
   component: FoundersLetter,
