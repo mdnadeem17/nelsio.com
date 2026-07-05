@@ -79,12 +79,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "google-site-verification", content: "ISryf9QA-Y9LA4oYboKZoZgGED28i1HkVWaXE4l8uyU" },
       { title: "NELSIO — Built to endure. Engineered to scale." },
-      { name: "description", content: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact." },
-      { name: "keywords", content: "NELSIO, CUTZO, IBZEN, Mohammed Nadeem, Pavan UG, software platforms, technology incubator, parent company, startups India, engineering standard" },
+      { name: "description", content: "NELSIO is the parent company behind CUTZO and IBZEN, co-founded by Mohammed Nadeem and Pavan UG. We build enduring software platforms and educational initiatives." },
+      { name: "keywords", content: "NELSIO, Mohammed Nadeem, Pavan UG, Mohammed Nadeem founder of NELSIO, Pavan UG founder of NELSIO, CUTZO, IBZEN, parent company, tech founders India" },
       { name: "author", content: "NELSIO" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { property: "og:title", content: "NELSIO — Built to endure. Engineered to scale." },
-      { property: "og:description", content: "An institution of enduring purpose. Parent company behind CUTZO, IBZEN, and emerging technology initiatives." },
+      { property: "og:description", content: "NELSIO is the parent company behind CUTZO and IBZEN, co-founded by Mohammed Nadeem and Pavan UG." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://nelsio.com" },
       { property: "og:site_name", content: "NELSIO" },
@@ -121,28 +121,51 @@ function RootShell({ children }: { children: ReactNode }) {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://nelsio.com/#organization",
     name: "NELSIO",
     url: "https://nelsio.com",
     logo: "https://nelsio.com/nelsio-logo.png",
-    description: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
+    image: "https://nelsio.com/nelsio-logo.png",
+    description: "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives, co-founded by Mohammed Nadeem and Pavan UG.",
     foundingDate: "2025",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
       addressCountry: "IN",
     },
     sameAs: ["https://www.linkedin.com/company/nelsio/"],
     founder: [
       {
         "@type": "Person",
+        "@id": "https://nelsio.com/#mohammed-nadeem",
         name: "Mohammed Nadeem",
-        "jobTitle": "Co-Founder",
+        jobTitle: "Co-Founder",
+        image: "https://nelsio.com/mohammed-nadeem.png",
+        url: "https://nelsio.com/#founders",
+        sameAs: [
+          "https://www.linkedin.com/in/mohammed-nadeem-nelsio"
+        ],
+        worksFor: {
+          "@type": "Organization",
+          "@id": "https://nelsio.com/#organization"
+        }
       },
       {
         "@type": "Person",
+        "@id": "https://nelsio.com/#pavan-ug",
         name: "Pavan UG",
-        "jobTitle": "Co-Founder",
-      },
+        jobTitle: "Co-Founder",
+        image: "https://nelsio.com/pavan-ug.png",
+        url: "https://nelsio.com/#founders",
+        sameAs: [
+          "https://www.linkedin.com/in/pavan-ug"
+        ],
+        worksFor: {
+          "@type": "Organization",
+          "@id": "https://nelsio.com/#organization"
+        }
+      }
     ],
     subOrganization: [
       {
@@ -165,6 +188,46 @@ function RootShell({ children }: { children: ReactNode }) {
     url: "https://nelsio.com",
   };
 
+  const mohammedSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://nelsio.com/#mohammed-nadeem",
+    name: "Mohammed Nadeem",
+    jobTitle: "Co-Founder of NELSIO",
+    worksFor: {
+      "@type": "Organization",
+      "@id": "https://nelsio.com/#organization",
+      name: "NELSIO",
+      url: "https://nelsio.com"
+    },
+    image: "https://nelsio.com/mohammed-nadeem.png",
+    url: "https://nelsio.com/#founders",
+    description: "Mohammed Nadeem is the Co-Founder of NELSIO, driving strategic vision, platforms roadmap, and emerging technology initiatives.",
+    sameAs: [
+      "https://www.linkedin.com/in/mohammed-nadeem-nelsio"
+    ]
+  };
+
+  const pavanSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://nelsio.com/#pavan-ug",
+    name: "Pavan UG",
+    jobTitle: "Co-Founder of NELSIO",
+    worksFor: {
+      "@type": "Organization",
+      "@id": "https://nelsio.com/#organization",
+      name: "NELSIO",
+      url: "https://nelsio.com"
+    },
+    image: "https://nelsio.com/pavan-ug.png",
+    url: "https://nelsio.com/#founders",
+    description: "Pavan UG is the Co-Founder of NELSIO, driving software architecture, technical infrastructure, and engineering execution.",
+    sameAs: [
+      "https://www.linkedin.com/in/pavan-ug"
+    ]
+  };
+
   return (
     <html lang="en">
       <head>
@@ -176,6 +239,14 @@ function RootShell({ children }: { children: ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(mohammedSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pavanSchema) }}
         />
       </head>
       <body>

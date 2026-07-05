@@ -13,13 +13,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "NELSIO is the parent company behind CUTZO, IBZEN, and emerging technology initiatives — building software platforms and educational programs designed for long-term impact.",
+          "NELSIO is the parent company behind CUTZO and IBZEN, co-founded by Mohammed Nadeem and Pavan UG. We build enduring software platforms and educational initiatives designed for long-term impact.",
       },
-      { name: "keywords", content: "NELSIO, CUTZO, IBZEN, Mohammed Nadeem, Pavan UG, software platforms, technology incubator, parent company, startups India" },
+      { name: "keywords", content: "NELSIO, Mohammed Nadeem, Pavan UG, Mohammed Nadeem founder of NELSIO, Pavan UG founder of NELSIO, CUTZO, IBZEN, software platforms, parent company, startups India" },
       { property: "og:title", content: "NELSIO — Built to endure. Engineered to scale." },
       {
         property: "og:description",
-        content: "Built for enduring purpose. The parent company behind CUTZO, IBZEN, and emerging technology initiatives.",
+        content: "NELSIO is the parent company behind CUTZO and IBZEN, co-founded by Mohammed Nadeem and Pavan UG. We build enduring software platforms and educational initiatives.",
       },
       { property: "og:url", content: "https://nelsio.com" },
       { property: "og:type", content: "website" },
@@ -408,13 +408,13 @@ const FOUNDERS = [
   {
     name: "Mohammed Nadeem",
     role: "Co-Founder",
-    bio: "Focused on strategic vision, long-term direction, and building the roadmap across NELSIO's platforms.",
+    bio: "Mohammed Nadeem is the Co-Founder of NELSIO. He drives the strategic vision, long-term roadmaps, and product execution across NELSIO's independent startups, platforms, and educational initiatives.",
     img: mohammedImg,
   },
   {
     name: "Pavan UG",
     role: "Co-Founder",
-    bio: "Focused on software architecture, technical infrastructure, and engineering execution across all NELSIO platforms.",
+    bio: "Pavan UG is the Co-Founder of NELSIO. He directs the technical infrastructure, software engineering standards, and systems architecture across all NELSIO technology platforms.",
     img: pavanImg,
   },
 ];
@@ -434,16 +434,24 @@ function Founders() {
         {FOUNDERS.map((f, i) => (
           <Reveal key={f.name} delay={i * 100}>
             <div className="flex flex-col gap-7">
-              {/* Portrait */}
-              <div className="relative w-full aspect-[3/4] rounded overflow-hidden max-w-[300px] bg-[oklch(0.96_0_0)]">
+              {/* Portrait with Schema.org ImageObject microdata */}
+              <figure
+                itemScope
+                itemType="https://schema.org/ImageObject"
+                className="relative w-full aspect-[3/4] rounded overflow-hidden max-w-[300px] bg-[oklch(0.96_0_0)] m-0"
+              >
                 <img
+                  itemProp="contentUrl"
                   src={f.img}
-                  alt={f.name}
+                  alt={`${f.name} — ${f.role} & Founder of NELSIO`}
+                  title={`${f.name} — ${f.role} of NELSIO`}
                   className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                 />
+                <meta itemProp="name" content={`${f.name} — Co-Founder of NELSIO`} />
+                <figcaption className="sr-only">{f.name}, Co-Founder of NELSIO</figcaption>
                 {/* Subtle overlay for depth */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div>
+              </figure>
 
               {/* Profile text */}
               <div className="space-y-4">
