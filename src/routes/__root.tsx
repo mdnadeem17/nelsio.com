@@ -99,9 +99,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "canonical", href: "https://www.nelsio.com" },
-      { rel: "icon", type: "image/png", href: "/nelsio-logo.png" },
-      { rel: "shortcut icon", type: "image/png", href: "/nelsio-logo.png" },
-      { rel: "apple-touch-icon", href: "/nelsio-logo.png" },
+      { rel: "icon", type: "image/svg+xml", href: "/icon.svg?v=2" },
+      { rel: "shortcut icon", type: "image/svg+xml", href: "/icon.svg?v=2" },
+      { rel: "apple-touch-icon", href: "/icon.svg?v=2" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

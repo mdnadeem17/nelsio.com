@@ -101,7 +101,7 @@ function HeroWordmark() {
       <img
         src={nelsioLogoImg}
         alt="NELSIO"
-        className="w-[250%] max-w-none h-auto object-contain mx-auto select-none block mix-blend-multiply"
+        className="w-[150%] md:w-[160%] max-w-none h-auto object-contain mx-auto select-none block mix-blend-multiply"
         draggable={false}
         onError={onErr}
       />
